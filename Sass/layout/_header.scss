@@ -1,0 +1,54 @@
+.logo {
+    color:$logo_Color_Primary;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    @include DM_Sans;
+    
+}
+
+.recherche {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+#search {
+    box-sizing: border-box;
+    width:100%;
+    height:4em;
+   border:none;
+   border-radius: 5px;;
+   background-color: $color_Bg_Search;
+   
+}
+
+#icon_Search {
+    position:absolute;
+    right:5%;
+    align-self: center;
+}
+input{
+    padding-left: 2em;
+}
+section {
+    margin-top: 3em;
+    display: flex;
+    justify-content: flex-start;
+    gap:2em;
+}
+
+.btn {
+    width:10em;
+    height:4.3em;
+}
+
+#ingredients, #btn_ingredients {
+   background-color: $color_Ingredients;
+  
+}
+#appareils, #btn_appareils{
+    background-color:$color_Appareil}
+#ustensils, #btn_ustensils {
+    background-color:$color_Ustensiles}
+

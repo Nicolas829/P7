@@ -1,0 +1,23 @@
+/***rappel pour import:
+Utils :
+    Variables.
+    Fonctions.
+    Mixins.
+    Placeholders.
+
+Feuilles de style de tiers (vendors) (si vous en avez).
+
+Base. fondations du site font, marge, box sizing,...
+
+Composants.
+
+Layout. (ce qui est réutilisable sur toutes ou plusieurs pages, header, footer,...)
+
+Pages. (code qui ne s'applique qu'a une seule page)
+
+Thèmes. 
+
+****/
+
+@import  "../../../node_modules/bootstrap/scss/bootstrap.scss", "utils/variables", "base/typography",
+ "utils/mixins","base/base","layout/header", "utils/_boucle.scss";
