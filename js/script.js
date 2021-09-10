@@ -1,12 +1,15 @@
 
 import { getData } from "./api.js";
+import { createCard } from "./createCard.js";
+import {variables} from "./variables.js";
 
-async function dropDownFill () {
-    let data = await getData();
-    let listIngredients=[]
-   for (let i=0; i<data.length;i++) {
-    listIngredients.push(array[i].ingredients)
-    console.log(listIngredients)}
+variables()
+
+async function cardFill () {
+    let data = await getData();  
+    createCard()
+   
 }
 
-dropDownFill()
+cardFill()
+    

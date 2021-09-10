@@ -11306,6 +11306,10 @@ img {
   height: 5em;
 }
 
+#card-preparation {
+  font-size: 0.6em;
+}
+
 .logo {
   color: #D04F4F;
   display: flex;
@@ -11330,7 +11334,7 @@ img {
 
 #icon_Search {
   position: absolute;
-  right: 5%;
+  right: 20%;
   align-self: center;
 }
 
