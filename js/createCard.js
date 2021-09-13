@@ -37,16 +37,35 @@ async function createCard () {
       
          ul.id="ingredients pour "+data[i].name
         for(let p=0;p<data[i].ingredients.length;p++){
+        let ingredientQuantity= document.createElement("div")
+        ingredientQuantity.style.listStyle="none"
          let cloneIngredient=ingredients.cloneNode()
+         let quantity=document.createElement("p")
         
-         cloneIngredient.innerText=data[i].ingredients[p].ingredient
+         cloneIngredient.innerText=data[i].ingredients[p].ingredient+" : "
+       
+         ingredientQuantity.style.display="flex"
+         ingredientQuantity.style.gap="0.8em"
+          
+        
+        
          cloneIngredient.id=data[i].ingredients[p].ingredient+" pour "+data[i].name
             console.log(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ",""))
             
             if(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ","")==data[i].name){             
                console.log(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ","")==data[i].name)
-           cardTitle.appendChild(cloneIngredient)
-           cloneIngredient.style.fontSize="0.8em"
+           cardTitle.appendChild(ingredientQuantity)
+           ingredientQuantity.appendChild(cloneIngredient)
+           ingredientQuantity.style.fontSize="0.5em"
+           ingredientQuantity.appendChild(quantity)
+          
+            if(data[i].ingredients[p].quantity==undefined){
+                ingredientQuantity.removeChild(quantity),
+                cloneIngredient.innerText=data[i].ingredients[p].ingredient+" "}
+            if(data[i].ingredients[p].unit==undefined){
+                    quantity.innerText="  "+data[i].ingredients[p].quantity}
+
+            else{ quantity.innerText="  "+data[i].ingredients[p].quantity+" "+data[i].ingredients[p].unit}
             
         }}
 
