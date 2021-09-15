@@ -60,7 +60,7 @@ async function dropDownListAppareil () {
       
     let li=document.createElement("li")
     li.innerText=data[i].ingredients[p].ingredient
-    li.className=data[i].ingredients[p].ingredient
+    li.className=data[i].ingredients[p].ingredient.toLowerCase()
       
     //list2.sort()+"\n\n"
    
