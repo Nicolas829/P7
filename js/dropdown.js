@@ -1,5 +1,4 @@
 import { getData } from "./api.js";
-
 import { createCard } from "./createCard.js";
 import {variables} from "./variables.js";
 
@@ -74,7 +73,7 @@ async function dropDownListAppareil () {
         
      search=e.target.value 
      console.log(search)
-      if(search.length>2 &&li.className.includes(search)){li.style.display="block", ingredientDropdown,"click"}
+      if(search.length>2 &&li.className.includes(search)){li.style.display="block"}
       else{li.style.display="none"}
  
     
