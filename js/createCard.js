@@ -1,6 +1,7 @@
 
 import {variables} from "./variables.js";
 import { getData } from "./api.js";
+import {searchIngredient} from "./algo.js";
 //appel DOM
 let cardTitle = document.getElementById("card-title")
 let cardPreparation=document.getElementById("card-preparation")
@@ -36,7 +37,10 @@ async function createCard () {
         container.appendChild(cloneCard)
       
          ul.id="ingredients pour "+data[i].name
+
         for(let p=0;p<data[i].ingredients.length;p++){
+
+
         let ingredientQuantity= document.createElement("div")
         ingredientQuantity.style.listStyle="none"
          let cloneIngredient=ingredients.cloneNode()
@@ -50,11 +54,11 @@ async function createCard () {
         
         
          cloneIngredient.id=data[i].ingredients[p].ingredient+" pour "+data[i].name
-            console.log(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ",""))
+         
             
-            if(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ","")==data[i].name){             
-               console.log(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ","")==data[i].name)
-           cardTitle.appendChild(ingredientQuantity)
+            if(cloneIngredient.id.replace(data[i].ingredients[p].ingredient+" pour ","")==ul.id.replace("ingredients pour ","")){             
+               
+          cardTitle.appendChild(ingredientQuantity)
            ingredientQuantity.appendChild(cloneIngredient)
            ingredientQuantity.style.fontSize="0.5em"
            ingredientQuantity.appendChild(quantity)
@@ -66,12 +70,12 @@ async function createCard () {
                     quantity.innerText="  "+data[i].ingredients[p].quantity}
 
             else{ quantity.innerText="  "+data[i].ingredients[p].quantity+" "+data[i].ingredients[p].unit}
-            
-        }}
 
-        
-               
-       
+           
+        }
+
+    }
+     
            
         
     if(cloneCard.id=="recette de Card title"){
