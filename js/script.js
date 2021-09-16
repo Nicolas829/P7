@@ -2,14 +2,11 @@
 import { getData } from "./api.js";
 import { createCard } from "./createCard.js";
 import {variables} from "./variables.js";
+import{dropDown} from "./dropdown.js"
 
-variables()
 
-async function cardFill () {
-    let data = await getData();  
-    createCard()
-   
-}
+dropDown()
+createCard()
 
-cardFill()
+
     
