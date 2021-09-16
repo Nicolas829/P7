@@ -42,11 +42,5 @@ function elementFactory (objet,ingredient, ustensils) {
     }
 }
 
-
-
-
-
-
-
    
  export { getData, getElements };
