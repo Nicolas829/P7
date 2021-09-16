@@ -21,30 +21,32 @@ let listElements = await getElements()
 //fonction creation des cards
 
 let newCard;
-let newIngredients=ingredients.cloneNode()
+
 function createCard() {
 
 
-for (let i=0;i<data.length;i++){
+for (let i=0;i<listElements.length;i++){
         newCard=card.cloneNode(true),   
-        
-        cardTitle.id=data[i].id,
-        cardTitle.innerText=data[i].name,
-        cardPreparation.innerText=data[i].description,
-        cardTime.innerText=data[i].time+" min"
-        container.appendChild(newCard) 
-        ul.appendChild(newIngredients)
-     
+        newCard.id=listElements[i].id,
+        cardTitle.id=listElements[i].id,
+        cardTitle.innerText=listElements[i].name,       
+        cardPreparation.innerText=listElements[i].description,
+        cardTime.innerText=listElements[i].time+" min"
+       
+        if(listElements[i].id==newCard.id){
+       
+        let newIngredients=ingredients.cloneNode(true)   
+        newIngredients.innerText=listElements[i].ingredients  
+        console.log(newIngredients)
+        newCard.appendChild(newIngredients)
+       
           }
+          container.appendChild(newCard)
+        }
+         
     }
 
-    for (let i=0;i<listElements.length;i++){
-              
-        ingredients.innerText=listElements[i].ingredients 
-        console.log(ingredients)
-  
-}
-
+    
 
 
 export { createCard}
