@@ -6,9 +6,9 @@ async function getData  () {
     .then((response) => response.json ())
    
     .then ((data)=> {
-        
+       
         return data.recipes;
-        
+       
     });
    return data
     
@@ -27,6 +27,17 @@ async function getElements (){
     return listElements;
 }
 
+async function getIngredients (){
+    let data=await getData()    
+    let listElements=[]
+    for(let i=0;i<data.length;i++){  
+       
+        for(let p=0;p<data[i].ingredients.length;p++) {   
+    listeIngredients.push(elementFactory(data[i],data[i].ingredients[p], data[i].ustensils[p]))
+    
+   }}
+    return listeIngredients;
+}
 
 
 function elementFactory (objet,ingredient, ustensils) {
@@ -38,6 +49,8 @@ function elementFactory (objet,ingredient, ustensils) {
         name : objet.name,
         time: objet.time,
         description: objet.description,
+       quantity: ingredient.quantity,
+       unit: ingredient.unit,
 
     }
 }

@@ -25,6 +25,7 @@ function dropDown () {
 
     listElements.forEach(element=>  {
         li=document.createElement("li"),
+        li.id=element.id
         listeIngredients.push(element.ingredients), 
         listeTriIngredients=[... new Set(listeIngredients)],
         listeAppliance.push(element.appliance),
@@ -32,7 +33,7 @@ function dropDown () {
         listeUstensils.push(element.ustensils)
         listeTriUstensils=[... new Set(listeUstensils)]
     })
-
+console.log()
 
     listeTriAppliance.sort()
     listeTriIngredients.sort()
@@ -41,8 +42,11 @@ function dropDown () {
     listeTriIngredients.forEach(element=> {
         li=document.createElement("li"), 
         li.innerText=element, 
+        
+       
         ingredients.appendChild(li)
     })
+    
     listeTriAppliance.forEach(element=> {
         li=document.createElement("li"), 
         li.innerText=element, 
