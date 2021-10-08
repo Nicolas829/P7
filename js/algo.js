@@ -1,41 +1,105 @@
-import { getData, getElements } from "./api.js";
+import { getElements } from "./api.js";
+import{dropDown} from "./dropdown.js"
 
 
-let cardTitle = document.querySelector("h5")
-const ingredients=document.querySelectorAll("li.ingredient")
-const appareils= document.getElementById("appareils")
-const ustensils= document.getElementById("ustensils")
-console.log(ingredients)
-let card=document.querySelectorAll("div[data-main='main-card']")
+//DOM
+let searhIngredients=document.getElementById("btn_ingredients")
+let searchUstensils=document.getElementById("btn_ustensils")
+let searchAppareils=document.getElementById("btn_appareils")
+let placeholder=document.getElementById("search")
+let card=document.getElementsByClassName("col-4")
+let tags=document.getElementsByClassName("tags")
 
-
+//création de tableau
 let listElements= await getElements()
 let search;
+let p=document.createElement("p")
+lookFor(placeholder)
+lookFor(searhIngredients)
+lookFor(searchAppareils)
+lookFor(searchUstensils)
 
-function lookFor(card) {
 
-    let placeholder=document.getElementById("search")
-    placeholder.addEventListener("input", e=>{ 
-      
-            search=e.target.value                      
-            console.log(search)      
+function searchInChamp (){
+
+    placeholder.addEventListener("input", e=>{
+        search=e.target.value
+        document.addEventListener("keypress", event=> {
+        if (event.keyCode === 13 ){
             
-            if (search.length>=3&&ingredients.includes(search)){                              
-                card.style.display="block"
-            }
-            else {card.style.display="none"}
-        
-    })        
+            for(let i=0;i<card.length;i++){ 
+                card[i].style.display="none"
+                if(card[i].innerText.toLowerCase().includes(search)){
+                    card[i].style.display="block"
+                }
+                
+        }
+    }})})
 }
+
+
+//recherche dans les section des recherches
+function lookFor(element){
+
+element.addEventListener("input", e=> {
+    search=e.target.value
+  
+    if (search.length>2){  
+        console.log(element.nextElementSibling.childNodes)
+    for (let i=0;i<element.nextElementSibling.childNodes.length;i++){     
+      
+    if(element.nextElementSibling.childNodes[i].innerText.toLowerCase().includes(search))   
+      {       
+                 
+      element.nextElementSibling.childNodes[i].style.display="block"   
+              
+       }               
     
-
-
-
-lookFor()
-
-
+    else{ element.nextElementSibling.childNodes[i].style.display="none"}
+}
+}})}
 
 
 
 
-export{lookFor}
+
+//création des id
+function searchEngine () {
+
+
+for(let i=0;i<listElements.length;i++){    
+ 
+    if(listElements[i].ingredients===tags[0].innerText||
+        listElements[i].ustensils===tags[0].innerText||
+        listElements[i].appliance===tags[0].innerText){
+     
+        let id=(listElements[i].id)
+        let listElementsFilter=listElements.filter(element=>element.id==id)      
+            
+        dropDown(listElementsFilter)
+        searchCard(id)     
+       
+     }
+    }
+    
+}
+
+//recherche de la card recette
+function searchCard (id){
+  
+    for(let i=0;i<card.length;i++){        
+        
+        if(id==card[i].id){
+
+            card[i].style.display="block"            
+          
+            
+}       
+  
+}
+}
+
+
+
+
+export{searchEngine, searchInChamp}

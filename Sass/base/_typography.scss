@@ -5,3 +5,10 @@
 @mixin lato {font-family: 'Lato', sans-serif;}
 
 //font-family: 'Roboto', sans-serif;
+
+#search::placeholder{
+    color:grey
+}
+::placeholder{
+    color:white
+}

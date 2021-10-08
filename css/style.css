@@ -11289,6 +11289,28 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#search::-moz-placeholder {
+  color: grey;
+}
+#search:-ms-input-placeholder {
+  color: grey;
+}
+#search::placeholder {
+  color: grey;
+}
+
+::-moz-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
@@ -11306,8 +11328,8 @@ img {
   height: 5em;
 }
 
-#card-preparation {
-  font-size: 0.6em;
+#recette {
+  display: none;
 }
 
 .logo {

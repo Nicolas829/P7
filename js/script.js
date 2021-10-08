@@ -1,13 +1,16 @@
 
-import { getData } from "./api.js";
+
 import { createCard } from "./createCard.js";
-import {variables} from "./variables.js";
 import{dropDown} from "./dropdown.js"
-import {lookFor} from "./algo.js"
+
+import { getElements } from "./api.js";
+import { searchEngine, searchInChamp } from "./algo.js";
 
 
-dropDown()
+let listElements=await getElements()
+
+dropDown(listElements)
 createCard()
-
+searchInChamp()
 
     

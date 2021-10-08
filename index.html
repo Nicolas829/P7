@@ -27,32 +27,32 @@
 						</svg>			
 						<h1>Les petits Plats</h1>
 					</div>
-					<div class="recherche">
+					<div class="recherche" id="main-container">
 						<input alt="champ de recherche" aria-label="indiquez ce que vous cherchez" type="text" id="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
 						<i class="fas fa-search" id="icon_Search"></i>
 				    </div>
 					<section class="button_DropDown">
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="btn_ingredients"  data-bs-toggle="dropdown" aria-expanded="false">
-							Ingredients
-							</button>
+							<input class="btn btn-secondary dropdown-toggle"  type="text" placeholder="Ingredients" id="btn_ingredients" data-bs-toggle="dropdown" aria-expanded="false">
+							
+						</input>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="ingredients">
 						
 							
 							</ul>
 						</div>
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="btn_appareils" data-bs-toggle="dropdown" aria-expanded="false">
-							Appareil
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"id="appareils">
+							<input class="btn btn-secondary dropdown-toggle" type="text" placeholder="Appareils" id="btn_appareils" data-bs-toggle="dropdown" aria-expanded="false">
+							
+						</input>
+							<ul class="dropdown-menu" class="search"aria-labelledby="dropdownMenuButton1"id="appareils">
 						
 							</ul>
 						</div>
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="btn_ustensils" data-bs-toggle="dropdown" aria-expanded="false">
-							Ustensiles
-							</button>
+							<input class="btn btn-secondary dropdown-toggle" type="text" placeholder="Ustensiles" id="btn_ustensils" data-bs-toggle="dropdown" aria-expanded="false">
+							
+						</input>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"id="ustensils">
 						
 							</ul>
@@ -62,11 +62,11 @@
 				</div>		  
 			</header>
 
-				<div class="container" >
+				<div class="container"  >
 					
 					  
 					<div class="row align-items-start" id="main-row">			
-						<div class="col-4" id="recette" data-main="main-card">				
+						<div class="col-4" id="recette" data-main="main-card" >				
 							  <div class="card mb-4 mt-4"  style ="height:30rem;"  >
 								<img src="/images/recipe-312952_1280.jpg" style ="height:14rem;" class="card-img-top" alt="...">
 								<div class="card-body mb-4"style="overflow: hidden;">
@@ -74,10 +74,7 @@
 										<div class="row">
 										  <div class="col-6">
 												<h5 class="card-title" id="card-title" d>Card title</h5>
-												<ul class="list list-group-flush list-unstyled" id="liste-ingredient" data-list="element-recette">
-													
-													
-								  				</ul>
+												
 								  			</div>
 								  <div class="col-6">
 									   <div class="row flex-nowrap ">
