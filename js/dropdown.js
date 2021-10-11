@@ -19,10 +19,10 @@ let listElements = await getElements ()
 //création de DOM
 let li
 let a 
-let forA=[]
+
 
 //création du contenu des liste déroulantes
-function dropDown (element) {  
+function dropDown (objet) {  
     
 
     function deleteOld(list) {
@@ -38,9 +38,9 @@ function dropDown (element) {
      let listIngredients=[]
      let listUstensils=[]
      let listAppliance=[]
-     listElements.forEach(element=> listIngredients.push(element.ingredients))
-     listElements.forEach(element=> listAppliance.push(element.appliance))
-     listElements.forEach(element=> listUstensils.push(element.ustensils))
+     objet.forEach(element=> listIngredients.push(element.ingredients))
+     objet.forEach(element=> listAppliance.push(element.appliance))
+     objet.forEach(element=> listUstensils.push(element.ustensils))
     
      listIngredients=[... new Set(listIngredients)]
      listUstensils=[... new Set(listUstensils)]
