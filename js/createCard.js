@@ -1,7 +1,7 @@
 
-import {variables} from "./variables.js";
+
 import { getData } from "./api.js";
-import {searchIngredient} from "./algo.js";
+
 //appel DOM
 let cardTitle = document.getElementById("card-title")
 let cardPreparation=document.getElementById("card-preparation")
