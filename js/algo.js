@@ -3,35 +3,38 @@ import { getData} from "./api.js";
 let data=await getData()
 
 let liste=[]
-let newListe=[]
+
+data.forEach(element=>liste.push(element))
+
 
 class listeFactory{
-    constructor (liste, element){
-        this.liste=liste
-        this.element=element        
-        liste=[]
-        liste.push(element)       
-        console.log(newListe)
+    constructor (liste){
+        this.liste=liste      
+        liste.forEach(element => new nameFactory(element.name))
+       
         return liste
 
     }
 }
 
-class elFactory{
-    constructor(newListe, element){
-        this.newListe=newListe
-        newListe=[]
 
-        liste.forEach(object=> new listeFactory(newListe).push(object.))
-        return newListe
-
+class nameFactory {
+    constructor (element){
+        this.element=element
+        console.log(element)
+        const listeIngredients=[]
+        listeIngredients.push(element)
+        console.log(listeIngredients)
     }
+
+
 }
 
+const ingredients=new nameFactory(liste)
+console.log(ingredients)
 
 
-data.forEach(element=>[...new elFactory(newListe,element)]) 
-
+export {listeFactory} ;
 
 
 
