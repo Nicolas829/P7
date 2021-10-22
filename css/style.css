@@ -11995,6 +11995,38 @@ img {
   height: 5em;
 }
 
+#search::-webkit-input-placeholder {
+  color: grey;
+}
+
+#search:-ms-input-placeholder {
+  color: grey;
+}
+
+#search::-ms-input-placeholder {
+  color: grey;
+}
+
+#search::placeholder {
+  color: grey;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::-ms-input-placeholder {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
 .logo {
   color: #D04F4F;
   display: -webkit-box;

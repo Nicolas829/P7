@@ -15,3 +15,9 @@ img {
     height:5em;
 }
 
+#search::placeholder{
+    color:grey;
+}
+::placeholder{
+    color:white
+}

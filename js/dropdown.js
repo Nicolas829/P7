@@ -5,47 +5,39 @@ let dropDownIngredients=document.getElementById("dropdown-ingredients")
 let dropDownUstensils=document.getElementById("ustensils")
 let dropDownAppliance= document.getElementById("appareils")
 
+//Tableau général
 let data=await getData()
 
-let name = data.map(element=>element.name)
+//on crée les tableau avec les éléments et on les trie
+// Ingrédients
 
-//on crée le tableau avec les ingrédients
-
-function getIngredients (ingredient){
+function getIngredients (){
  let ingredients =data.map(element=>element.ingredients)
- ingredient=[]
+ let ingredient=[]
 ingredients.forEach(element=>{for (let i=0;i<element.length;i++){(ingredient.push(element[i].ingredient))}})
-
+ingredient.sort()
+ingredient=[...new Set(ingredient)]
 return ingredient
 }
 
-
-//on trie les élements
-let ingredient = getIngredients()
-ingredient.sort()
-ingredient=[...new Set(ingredient)]
-
-let ustensils=data.map(element=>element.ustensils)
-console.log(ustensils)
-
+//Ustensiles
 function getUstensils (ustensils){
-    ustensils =data.map(element=>element.ustensils)
+   ustensils =data.map(element=>element.ustensils)
    let ustensil=[]
-
-   console.log(ustensils.ustensils)
    ustensils.forEach(element=>{for (let i=0;i<element.length;i++){(ustensil.push(element[i]))}})
-   
+   ustensil.sort()
+   ustensil=[...new Set(ustensil)]
    return ustensil
    }
+
+//On appelle les tableaux
+let ingredient = getIngredients()
+let ustensil=getUstensils(ustensils)
+
 //on crée le tableau d'appareils
 let appliance=data.map(element=>element.appliance)
 appliance.sort()
 appliance=[...new Set(appliance)]
-console.log(appliance)
-
-let ustensil=getUstensils(ustensils)
-ustensil.sort()
-ustensil=[...new Set(ustensil)]
 
 
 //on crée la fonction de remplissage des dropdown
@@ -56,9 +48,7 @@ function dropDownFill(elements, target){
     li.innerText=element})
 }
 
-
-
-
+//on apelle les fonctions avec les paramètres tableaux triés
 dropDownFill(appliance, dropDownAppliance)
 dropDownFill(ingredient, dropDownIngredients)
 dropDownFill(ustensil, dropDownUstensils)
