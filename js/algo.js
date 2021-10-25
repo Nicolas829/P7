@@ -1,6 +1,7 @@
 import { getData} from "./api.js";
 //DOM
 let inputSearch=document.getElementById("search")
+let card=document.getElementsByClassName("col-4")
 
 
 let data=await getData()
@@ -27,19 +28,36 @@ function showCardSearch (data, index, column, element) {
     }
     return false
 }
-let result=[]
-function search(result){
-inputSearch.addEventListener("input",(event, result)=> {
-    
-if(event.target.value.length>2) {
-    result=[]
-    result.push(event.target.value)
-    if (data.includes(result)){
+
+
+
+
+
+function lookForId(inputTarget){
+
+    let cardArray=[]
+    cardArray.push(card)
+    cardArray.forEach(element=>{console.log(element.nex)
         
-    }
-    return result
-}}
-)}
+    })
+    
+}
+
+
+
+
+ function inputTarget (){
+    
+    inputSearch.addEventListener("input", (e)=> {
+        result =e.target.value
+        console.log( result)
+        return result})
+
+}
+
+
+
+lookForId(inputTarget)
 
 
 

@@ -44,12 +44,15 @@ section {
     height:4.3em;
 }
 
-#ingredients, #btn_ingredients {
+#dropdown-ingredients, #btn_ingredients {
    background-color: $color_Ingredients;
+   color:white;
   
 }
 #appareils, #btn_appareils{
-    background-color:$color_Appareil}
-#ustensils, #btn_ustensils {
+    background-color:$color_Appareil;
+    color:white;}
+#ustensils, #btn_ustensils 
+{   color:white;
     background-color:$color_Ustensiles}
 
