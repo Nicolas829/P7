@@ -2,6 +2,12 @@ import { getData} from "./api.js";
 //DOM
 let inputSearch=document.getElementById("search")
 let card=document.getElementsByClassName("col-4")
+let searhIngredients=document.getElementById("btn_ingredients")
+let searchUstensils=document.getElementById("btn_ustensils")
+let searchAppareils=document.getElementById("btn_appareils")
+let placeholder=document.getElementById("search")
+let result;
+
 
 
 let data=await getData()
@@ -30,34 +36,38 @@ function showCardSearch (data, index, column, element) {
 }
 
 
+//fonction qui compare
+function compareId (searchId, showId){
 
 
+}
 
-function lookForId(inputTarget){
+function lookForId(element, inputTarget){
 
-    let cardArray=[]
-    cardArray.push(card)
-    cardArray.forEach(element=>{console.log(element.nex)
-        
-    })
+   
+   
+    
+
+    
     
 }
 
 
 
 
- function inputTarget (){
-    
+function resultat(){
     inputSearch.addEventListener("input", (e)=> {
-        result =e.target.value
-        console.log( result)
-        return result})
+        result=e.target.value
+        
+        return  
+        }) 
+    }
+    let input = resultat()
+console.log(input)
 
-}
 
+lookForId(searchAppareils)
 
-
-lookForId(inputTarget)
 
 
 
