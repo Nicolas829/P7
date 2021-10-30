@@ -24,29 +24,32 @@ function searchInChamp (){
 
     placeholder.addEventListener("input", e=>{
         search=e.target.value
-        document.addEventListener("keypress", event=> {
-        if (event.keyCode === 13 ){
+      console.log(search)
+        if (search.length>2 ){
             
             for(let i=0;i<card.length;i++){ 
+                console.log(card[i])
                 card[i].style.display="none"
                 if(card[i].innerText.toLowerCase().includes(search)){
                     card[i].style.display="block"
                 }
                 
+                
         }
-    }})})
-}
+    }})}
 
 
-//recherche dans les section des recherches
+
+//recherche dans les sections déroulantes
 function lookFor(element){
 
 element.addEventListener("input", e=> {
     search=e.target.value
   
     if (search.length>2){  
-        console.log(element.nextElementSibling.childNodes)
-    for (let i=0;i<element.nextElementSibling.childNodes.length;i++){     
+       
+    for (let i=0;i<element.nextElementSibling.childNodes.length;i++){    
+         element.nextElementSibling.childNodes[i].style.display="block"    
       
     if(element.nextElementSibling.childNodes[i].innerText.toLowerCase().includes(search))   
       {       
@@ -64,7 +67,7 @@ element.addEventListener("input", e=> {
 
 
 //création des id
-function searchEngine () {
+function searchEngine (clickValue) {
 
 
 for(let i=0;i<listElements.length;i++){    

@@ -25,15 +25,7 @@ let a
 function dropDown (objet) {  
     
 
-    function deleteOld(list) {
-    while (list.hasChildNodes()) {  
-        list.removeChild(list.firstChild);
-      }}
-
-    deleteOld(ingredients)
-    deleteOld(appareils)
-    deleteOld(ustensils)
-
+    
   
      let listIngredients=[]
      let listUstensils=[]
@@ -45,13 +37,14 @@ function dropDown (objet) {
      listIngredients=[... new Set(listIngredients)]
      listUstensils=[... new Set(listUstensils)]
      listAppliance=[... new Set(listAppliance)]
-     console.log(listIngredients)
+     
      listIngredients.sort()
      listAppliance.sort()
      listUstensils.sort()
-    listIngredients.forEach(element=> dropDownStyle(ingredients,element)  )  
-    listAppliance.forEach(element=> dropDownStyle(appareils, element)) 
-   listUstensils.forEach(element=> {dropDownStyle(ustensils, element)})   
+     
+     listIngredients.forEach(element=> dropDownStyle(ingredients,element)  )  
+     listAppliance.forEach(element=> dropDownStyle(appareils, element)) 
+     listUstensils.forEach(element=> {dropDownStyle(ustensils, element)})   
      
 }
 
@@ -62,7 +55,7 @@ function dropDown (objet) {
 function dropDownStyle (target, element) {
    
     li=document.createElement("li"), 
-    a =document.createElement("a")        
+    a =document.createElement("a")    
     a.innerText=element
     a.className="dropTags"    
     a.style.cursor="pointer"        
@@ -79,8 +72,18 @@ function dropDownStyle (target, element) {
    
   
    //evenement click dans les dropdown
-    a.addEventListener("click", e=> {        
+    a.addEventListener("click", e=> {     
+      function deleteOld(list) {
+         while (list.hasChildNodes()) {  
+             list.removeChild(list.firstChild);
+
+           }}
+     
+         deleteOld(ingredients)
+         deleteOld(appareils)
+         deleteOld(ustensils)
         
+         let clickValue=e.target.innerText
         let tags=document.createElement("p")
         let closeTags=document.createElement("i")     
         tags.className="tags"            
@@ -98,11 +101,13 @@ function dropDownStyle (target, element) {
         container.insertAdjacentElement("afterend",tags)
         tags.appendChild(closeTags)
        
-        searchEngine()       
+        searchEngine(clickValue)       
        
         closeTags.addEventListener("click", e=> {   
         
-        tags.remove()                  
+        tags.remove()   
+       searchEngine()
+        
           
         })    
         return tags    
