@@ -24,7 +24,7 @@ function searchInChamp (){
 
     placeholder.addEventListener("input", e=>{
         search=e.target.value
-      console.log(search)
+     
         if (search.length>2 ){
             
             for(let i=0;i<card.length;i++){ 
@@ -72,7 +72,7 @@ function searchEngine (clickValue) {
 
 for(let i=0;i<listElements.length;i++){    
  
-    if(listElements[i].ingredients===tags[0].innerText||
+    if( listElements[i].ingredients===tags[0].innerText||
         listElements[i].ustensils===tags[0].innerText||
         listElements[i].appliance===tags[0].innerText){
      
@@ -80,6 +80,7 @@ for(let i=0;i<listElements.length;i++){
         let listElementsFilter=listElements.filter(element=>element.id==id)      
             
         dropDown(listElementsFilter)
+        
         searchCard(id)     
        
      }
