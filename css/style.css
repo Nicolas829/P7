@@ -12027,6 +12027,10 @@ img {
   color: white;
 }
 
+#ingredients, #btn_ingredients {
+  background-color: #3282F7;
+}
+
 .logo {
   color: #D04F4F;
   display: -webkit-box;

@@ -1,13 +1,15 @@
 
-import { getData} from "./api.js";
 import { createCard } from "./createCard.js";
-import{dropDownFill} from "./dropdown.js";
+import{dropDown} from "./dropdown.js"
+
+import { getElements } from "./api.js";
 
 
 
+let listElements=await getElements()
 
+dropDown(listElements)
 createCard()
-
 
 
 
