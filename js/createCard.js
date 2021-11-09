@@ -17,18 +17,23 @@ async function createCard () {
     for (let i=0; i<data.length;i++) {
       
     
+
+        
         //on crée les carte pour chacune des recettes
         let cloneCard=card.cloneNode(true)        
         cloneCard.id=data[i].id-1
+       
       
         // on apelle les élements de chaque recette et on le flèche dans la card
         cardTitle.innerText = data[i].name;
         cardTitle.id=data[i].id
+      
         cardPreparation.innerText=data[i].description       
         cardTime.innerText=data[i].time+" min"
         cardTime.id=data[i].time+data[i].id       
         if(cloneCard.id=="0"){
        
+                   
             cloneCard.style.display="none"
         }         
         container.appendChild(cloneCard)

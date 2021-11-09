@@ -110,17 +110,17 @@ function dropDownStyle (target, element) {
          deleteOld(ustensils)
         
          let clickValue=e.target.innerText
-       
+        let arrayId=[]
          let tags= createTags(e.target)
          let close=closeTags(tags)
         container.insertAdjacentElement("afterend",tags)
         tags.appendChild(close)
         
        
-        searchEngine(clickValue)       
+        searchEngine(clickValue, arrayId, tags, close)       
       
         
-        return tags    
+          
     })
 }
 
