@@ -9,34 +9,54 @@ let searchAppareils=document.getElementById("btn_appareils")
 let placeholder=document.getElementById("search")
 let card=document.getElementsByClassName("col-4")
 let tags=document.getElementsByClassName("tags")
+let a=document.getElementsByTagName("a")
 
 //création de tableau
 let listElements= await getElements()
 let search;
 let p=document.createElement("p")
+
 lookFor(placeholder)
 lookFor(searhIngredients)
 lookFor(searchAppareils)
 lookFor(searchUstensils)
 
+let id=[]
+function listenInput(element) {   
+  element.addEventListener("input", (e)=>{
+    
+    let search=e.target.value
+    let arrayCard=[].slice.call(card)
+        
 
-function searchInChamp (){
-
-    placeholder.addEventListener("input", e=>{
-        search=e.target.value
+    arrayCard.forEach(element=>{   
+     if (search.length>2&&element.innerText.toLowerCase().includes(search)){ 
+      
+       id.push(element.id)
+       console.log(id) 
+      
+       id.forEach(element=>{card[element].style.display="block";card[1].style.display="none"})     
+       searchUstensils.parentNode.removeChild(p)
+     } 
+    
+         
+      else {
+       
+       searchUstensils.parentNode.appendChild(p)
+       p.innerText="Désolé nous n'avons pas de recette correspondante"
+       p.style.marginLeft="-15em"
+       p.style.marginTop="4em"
+     }
+    
      
-        if (search.length>2 ){
-            
-            for(let i=0;i<card.length;i++){ 
-                console.log(card[i])
-                card[i].style.display="none"
-                if(card[i].innerText.toLowerCase().includes(search)){
-                    card[i].style.display="block"
-                }
-                
-                
-        }
-    }})}
+}
+    
+   
+     
+   )}
+   )}
+ listenInput(placeholder)
+ 
 
 
 
@@ -106,4 +126,4 @@ function searchCard (id){
 
 
 
-export{searchEngine, searchInChamp}
+export{searchEngine}
