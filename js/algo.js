@@ -39,33 +39,40 @@ function lookFor(element){
         else{ element.style.display="none"}
     }})
     })}
-//création de tableau
+
+//création de tableau et element
 let listElements= await getElements()
 let search;
 let p=document.createElement("p")
 let id=[]
 
-placeholder.addEventListener("input", (e)=>{
+
+//fonction de recherche principal
+function searchPlaceholder () {
+  placeholder.addEventListener("input", (e)=>{
  
     let search=e.target.value
     let arrayCard=[].slice.call(card)
     id=[]
-    console.log(arrayCard)
+    
     arrayCard.forEach(element=>{  card[element.id].style.display="none"
      if (search.length>2&&element.innerText.toLowerCase().includes(search)){       
-       
-       id.push(element.id)
-       console.log(id)
-       id.forEach(element=>{card[element].style.display="block"})      
+      searchUstensils.parentNode.removeChild(p)
+     card[element.id].style.display="block"   
       
-      }
-     
-   
-     
+      }   
+     else if(search.length>2&&(!element.innerText.toLowerCase().includes(search))){ 
+         searchUstensils.parentNode.appendChild(p)
+      p.innerText="Désolé nous n'avons pas de recette correspondante"
+      p.style.marginLeft="-15em"
+      p.style.marginTop="4em"
+
+     }
 }
      
    )}
-   )
+   )}
+   searchPlaceholder()
 
 
 let n=0
