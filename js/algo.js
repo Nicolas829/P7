@@ -1,3 +1,4 @@
+
 import { getElements } from "./api.js";
 import{dropDown, createTags, closeTags} from "./dropdown.js"
 
@@ -44,33 +45,27 @@ let search;
 let p=document.createElement("p")
 let id=[]
 
-function searchInChamp (){
-
-  placeholder.addEventListener("input", e=>{
-      search=e.target.value
-    console.log(search)
-      if (search.length>2 ){
-          
-          for(let i=0;i<card.length;i++){ 
-              console.log(card[i])
-              card[i].style.display="none"
-              if(card[i].innerText.toLowerCase().includes(search)){
-                
-                  card[i].style.display="block"
-              }
-
-              else {
-                searchUstensils.parentNode.appendChild(p)
-                p.innerText="Désolé nous n'avons pas de recette correspondante"
-                p.style.marginLeft="-15em"
-                p.style.marginTop="4em"
-        
-              }
-              
-              
+placeholder.addEventListener("input", (e)=>{
+ 
+    let search=e.target.value
+    let arrayCard=[].slice.call(card)
+    id=[]
+    console.log(arrayCard)
+    arrayCard.forEach(element=>{  card[element.id].style.display="none"
+     if (search.length>2&&element.innerText.toLowerCase().includes(search)){       
+       
+       id.push(element.id)
+       console.log(id)
+       id.forEach(element=>{card[element].style.display="block"})      
+      
       }
-  }})}
-  searchInChamp()
+     
+   
+     
+}
+     
+   )}
+   )
 
 
 let n=0
@@ -81,17 +76,16 @@ function searchEngine (result, arrayId) {
 n++
 
 listElements.forEach(element=>{ 
-  
- card[element.id].style.display="none"
+ 
+ card[element.id-1].style.display="none"
  card[1].style.display="none"
  card[0].style.display="none"
     if(element.ingredients===result||
        element.ustensils===result||
-       element.appliance===result){
+       element.appliance===result       ){
      
    
-     arrayId.push(element.id)
-     console.log(element)     
+     arrayId.push(element.id)      
           
       }})
     
@@ -109,7 +103,7 @@ listElements.forEach(element=>{
       
       arrayFilter.forEach(element=>{
          if(element===50){card[0].style.display="block"}
-         else{card[element+1].style.display="block"
+         else{card[element].style.display="block"
          card[1].style.display="none"}}
         )  
       

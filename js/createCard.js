@@ -21,29 +21,30 @@ async function createCard () {
         
         //on crée les carte pour chacune des recettes
         let cloneCard=card.cloneNode(true)        
-        cloneCard.id=data[i].id-1
+        cloneCard.id=cardTitle.id
        
       
         // on apelle les élements de chaque recette et on le flèche dans la card
         cardTitle.innerText = data[i].name;
         cardTitle.id=data[i].id
-      
+        
         cardPreparation.innerText=data[i].description       
         cardTime.innerText=data[i].time+" min"
         cardTime.id=data[i].time+data[i].id       
-        if(cloneCard.id=="0"){
        
-                   
-            cloneCard.style.display="none"
-        }         
-        container.appendChild(cloneCard)
-       
-        card.style.display="none"          
+          
+         container.appendChild(cloneCard)
+         if(cloneCard.id=="card-title"){
+                   cloneCard.remove()      
+            
+        }     
+        card.id=0
+        console.log(cloneCard) 
         
+        card.style.display="none"          
+        console.log(card)
    
-    if(card.id=="recette"){
-       card.id="50"
-    }
+   
 
 
            
