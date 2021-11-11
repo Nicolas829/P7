@@ -69,10 +69,15 @@ function createTags(element){
     let tags=document.createElement("p")     
     tags.className="tags"            
     tags.style.backgroundColor="#ED6454"
+    tags.style.display="inline-block"
     tags.style.fontSize="1em"
     tags.style.borderRadius="0.5em"     
     tags.style.flexWrap="wrap"
     tags.style.color="white"    
+    tags.style.padding="0.2em"
+    tags.style.margin="0.5em"
+    
+  
     tags.innerText=element.innerText   
     
 return tags}

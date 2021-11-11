@@ -12068,6 +12068,7 @@ img {
 #icon_Search {
   position: absolute;
   right: 20%;
+  top: 13.5%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
