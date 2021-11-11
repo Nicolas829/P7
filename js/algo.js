@@ -57,9 +57,9 @@ function searchPlaceholder () {
     
     arrayCard.forEach(element=>{  card[element.id].style.display="none"
      if (search.length>2&&element.innerText.toLowerCase().includes(search)){       
-      searchUstensils.parentNode.removeChild(p)
-     card[element.id].style.display="block"   
       
+     card[element.id].style.display="block"   
+     searchUstensils.parentNode.removeChild(p)
       }   
      else if(search.length>2&&(!element.innerText.toLowerCase().includes(search))){ 
          searchUstensils.parentNode.appendChild(p)
