@@ -39,10 +39,10 @@ async function createCard () {
             
         }     
         card.id=0
-        console.log(cloneCard) 
+       
         
         card.style.display="none"          
-        console.log(card)
+        
    
    
 

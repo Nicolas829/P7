@@ -75,12 +75,12 @@ function searchPlaceholder () {
    searchPlaceholder()
 
 
-let n=0
 
 
 //création des id
-function searchEngine (result, arrayId) {
-n++
+function searchEngine (result, arrayId, n) {
+   console.log(n)
+
 
 listElements.forEach(element=>{ 
  
@@ -93,12 +93,13 @@ listElements.forEach(element=>{
      
    
      arrayId.push(element.id)      
-          
-      }})
-    
-      //let arrayFilter=[]
-      if(n===1){
+     if(n===1){
+      id=[]
       id=id.concat(arrayId)}
+      }})
+    console.log(id)
+      //let arrayFilter=[]
+     
 
       let arrayFilter=[];
 

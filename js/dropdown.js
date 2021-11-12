@@ -9,6 +9,7 @@ const appareils= document.getElementById("appareils")
 const ustensils= document.getElementById("ustensils")
 let container=document.getElementById("main-container")
 let showA=document.querySelectorAll("a")
+let showTags=document.getElementsByClassName("tags")
 
 
 
@@ -47,6 +48,7 @@ function dropDown (objet) {
      listUstensils.forEach(element=> {dropDownStyle(ustensils, element)})   
      
 }
+//fonction fermeture tags
 function closeTags(tags){
     let close=document.createElement("i")   
 close.style.marginLeft="0.5em"
@@ -54,17 +56,24 @@ close.style.cursor="pointer"
 close.className="fas fa-times-circle"      
 close.style.backgroundColor="#ED6454"
 close.style.id="close"
+
+
 close.addEventListener("click", e=> {   
-        
-    tags.remove()   
     
-    searchEngine(tags)
+    tags.remove()   
+   let arrayId=[]
+    
+  
+      if(showTags.length>0) {searchEngine(showTags.innerText, arrayId)}
+      else{location.reload()}
+    
+    
     
       
     })    
 return close}
 
-
+//fonction creation des tags
 function createTags(element){
     let tags=document.createElement("p")     
     tags.className="tags"            
@@ -81,14 +90,18 @@ function createTags(element){
     tags.innerText=element.innerText   
     
 return tags}
-
+//fonction supprimant la liste existante dans les listes déroulantes
 function deleteOld(list) {
     while (list.hasChildNodes()) {  
         list.removeChild(list.firstChild);
 
       }}
 
-//fonction création du contenu des listes déroulantes + création tags au clic
+ 
+
+ //fonction création du contenu des listes déroulantes + création tags au clic
+ let n=0;
+ console.log(n)
 function dropDownStyle (target, element) {
    
     li=document.createElement("li"), 
@@ -109,11 +122,11 @@ function dropDownStyle (target, element) {
    //evenement click dans les dropdown
     a.addEventListener("click", e=> {     
       
-     
+        
          deleteOld(ingredients)
          deleteOld(appareils)
          deleteOld(ustensils)
-        
+        n++
          let clickValue=e.target.innerText
         let arrayId=[]
          let tags= createTags(e.target)
@@ -121,8 +134,9 @@ function dropDownStyle (target, element) {
         container.insertAdjacentElement("afterend",tags)
         tags.appendChild(close)
         
-       
-        searchEngine(clickValue, arrayId, tags, close)       
+        
+        
+        searchEngine(clickValue, arrayId, n)       
       
         
           

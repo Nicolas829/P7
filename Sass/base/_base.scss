@@ -19,9 +19,15 @@ img {
     color:grey;
 }
 ::placeholder{
-    color:white
+    color:white;
+    margin-left:1.5em;
 }
 #ingredients, #btn_ingredients {
     background-color: #3282F7;
   }
-  
+
+i.fa-chevron-down{
+    color:white;
+    margin-left:-2em;
+    
+}
