@@ -4,7 +4,7 @@ import{dropDown} from "./dropdown.js"
 
 import { getElements } from "./api.js";
 
-let main= document.getElementsByTagName("main")
+
 let card = document.getElementsByClassName("test")
 let listElements=await getElements()
 

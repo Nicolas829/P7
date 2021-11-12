@@ -18,7 +18,6 @@ async function getElements() {
 
         for (let p = 0; p < data[i].ingredients.length; p++) {
             listElements.push(elementFactory(data[i], data[i].ingredients[p], data[i].ustensils[p]))
-
         }
     }
     return listElements;

@@ -102,7 +102,7 @@ function deleteOld(list) {
 
 //fonction création du contenu des listes déroulantes + création tags au clic
 let n = 0;
-console.log(n)
+
 function dropDownStyle(target, element, color) {
 
     li = document.createElement("li"),

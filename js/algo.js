@@ -102,8 +102,8 @@ function searchEngine(result, arrayId, n) {
          }
       }
    })
-   console.log(id)
-   //let arrayFilter=[]
+ 
+   
 
 
    let arrayFilter = [];

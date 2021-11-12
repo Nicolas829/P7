@@ -40,14 +40,6 @@ async function createCard() {
         }
         card.id = 0
 
-
-
-
-
-
-
-
-
         for (let p = 0; p < data[i].ingredients.length; p++) {
 
             let ingredientQuantity = document.createElement("li")
