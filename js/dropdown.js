@@ -25,8 +25,6 @@ let a
 //création du contenu des liste déroulantes
 function dropDown (objet) {  
     
-
-    
   
      let listIngredients=[]
      let listUstensils=[]
