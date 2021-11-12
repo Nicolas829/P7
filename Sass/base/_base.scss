@@ -14,6 +14,9 @@ img {
     width:10em;
     height:5em;
 }
+h5{
+    margin-bottom:1.5em;
+}
 
 #search::placeholder{
     color:grey;
@@ -33,3 +36,7 @@ i.fa-chevron-down{
     margin-top:1.6em;
   
 }
+@media only screen and (max-width: 980px) {
+    i.fa-chevron-down{
+        margin-left:5em;
+        margin-top:0.9em;}}

@@ -20,9 +20,8 @@ createCard()
 
 if (window.matchMedia("(max-width: 981px)").matches) {
 
-card[0].classList.add("col-6")}
+card[0].classList.add("col-12")}
 
           
 
  
-    

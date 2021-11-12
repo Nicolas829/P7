@@ -11995,6 +11995,10 @@ img {
   height: 5em;
 }
 
+h5, .h5 {
+  margin-bottom: 1.5em;
+}
+
 #search::-webkit-input-placeholder {
   color: grey;
 }
@@ -12042,6 +12046,13 @@ i.fa-chevron-down {
   margin-top: 1.6em;
 }
 
+@media only screen and (max-width: 980px) {
+  i.fa-chevron-down {
+    margin-left: 5em;
+    margin-top: 0.9em;
+  }
+}
+
 .logo {
   color: #D04F4F;
   display: -webkit-box;
@@ -12060,6 +12071,11 @@ i.fa-chevron-down {
 @media only screen and (max-width: 980px) {
   .logo {
     margin-top: 4em;
+  }
+  main {
+    margin-right: 0em;
+    margin-left: 0em;
+    font-size: 1.5em;
   }
 }
 

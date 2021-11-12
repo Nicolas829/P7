@@ -49,13 +49,14 @@ async function createCard() {
 
             cloneIngredient.innerText = data[i].ingredients[p].ingredient + " : "
 
-
-            ingredientQuantity.style.display = "flex"
-            ingredientQuantity.style.gap = "0.8em"
-
+           
+            ingredientQuantity.style.display = "flex"            
+            ingredientQuantity.style.marginTop="1em"
+           
+                
 
             cloneIngredient.id = data[i].id + " pour " + data[i].name
-
+            
 
             if (cloneIngredient.id.replace(" pour " + data[i].name, "") == cardTitle.id) {
 
@@ -63,6 +64,9 @@ async function createCard() {
                 ingredientQuantity.appendChild(cloneIngredient)
                 ingredientQuantity.style.fontSize = "0.5em"
                 ingredientQuantity.appendChild(quantity)
+                if (window.matchMedia("(max-width: 981px)").matches) {
+                    ingredientQuantity.style.marginTop="0.5em"
+                    ingredientQuantity.style.fontSize = "0.7em"}
 
                 if (data[i].ingredients[p].quantity == undefined) {
                     ingredientQuantity.removeChild(quantity),
